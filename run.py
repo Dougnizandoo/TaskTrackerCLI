@@ -1,2 +1,6 @@
+from app import Controller
+
+
 if __name__ == '__main__':
-    pass
+    app = Controller()
+    app.main()

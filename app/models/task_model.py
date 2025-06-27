@@ -9,8 +9,8 @@ class Task:
         self.__id = id
         self.__description = description
         self.__status = status
-        self.__created_at = created_at or datetime.now()
-        self.__updated_at = updated_at or datetime.now()
+        self.__created_at = created_at or datetime.now().strftime('%m/%d/%Y - %H:%M')
+        self.__updated_at = updated_at or datetime.now().strftime('%m/%d/%Y - %H:%M')
 
     def __str__(self):
         return f'Task number: {self.id}'
@@ -40,12 +40,12 @@ class Task:
     @description.setter
     def description(self, new_description):
         self.__description = new_description
-        self.__updated_at = datetime.now()
+        self.__updated_at = datetime.now().strftime('%m/%d/%Y - %H:%M')
 
     @status.setter
     def status(self, new_status: int):
         self.__status = new_status
-        self.__updated_at = datetime.now()
+        self.__updated_at = datetime.now().strftime('%m/%d/%Y - %H:%M')
 
 
     # dict model for saving
